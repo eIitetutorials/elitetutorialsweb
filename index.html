@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Tutorials</title>
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3749/3749784.png" type="image/png">
+
+<style>
+body{font-family:'Segoe UI',sans-serif;margin:0;background:#f0f4f8;color:#111;}
+.container{max-width:1100px;margin:auto;padding:20px;}
+a{text-decoration:none;}
+button{cursor:pointer;}
+
+/* Header */
+header{
+  background:linear-gradient(90deg,#0b76ef,#2bbbad);
+  padding:5px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 4px 8px rgba(0,0,0,0.15);
+  border-bottom-left-radius:15px;
+  border-bottom-right-radius:15px;
+}
+.logo{
+  font-weight:bold;
+  font-size:26px;
+  letter-spacing:2px;
+  background: linear-gradient(90deg,#ffd700,#ff6f61);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:1px 1px 2px rgba(0,0,0,0.3);
+  font-family:'Segoe UI',sans-serif;
+  transition: 0.3s ease-in-out;
+}
+.logo:hover{transform: scale(1.1); text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.8);}
+header .brand div:nth-child(2){color:#fff;font-size:0.9rem;}
+
+nav ul{list-style:none;display:flex;gap:10px;padding:0;margin:0;flex-wrap:wrap;}
+nav ul li a{color:#fff;font-weight:500;padding:6px 12px;border-radius:50px;background:#0b76ef;transition:0.3s;}
+nav ul li a:hover{background:#2bbbad;}
+
+/* Offer Banner */
+#offer{
+  position: relative; overflow: hidden; color: #fff; text-align: center; padding:25px 10px;
+  background: url('https://imgs.search.brave.com/AA0spJvNwJSf9fCENVhFZZczDp9k5mVac-KCWJ9J69s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzE2LzE3LzkxLzY1/LzM2MF9GXzE2MTc5/MTY1NDNfNjhFS3Zq/Tno4UERidmJITTVx/S1ZuUm5KUkNZVExl/VnMuanBn') center/cover no-repeat;
+  border-radius: 15px;
+}
+#offer div{
+  position: relative; z-index:1; max-width:600px; margin:auto;
+  background: rgba(0,0,0,0.55); padding:15px 20px; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+#offer h1{font-size:1.6rem;margin-bottom:6px;text-shadow:1.5px 1.5px 3px rgba(0,0,0,0.7);}
+#offer p{font-size:0.95rem;margin-bottom:10px;}
+#offer a{padding:6px 18px;font-size:0.95rem;display:inline-block;border-radius:50px;font-weight:bold;background:#ffd700;color:#0b76ef;transition:0.3s;}
+#offer a:hover{background:#ffc107;}
+#offer-glow {font-weight:bold;font-size:1rem;color:#ffd700;text-shadow: 0 0 5px #ffd700,0 0 10px #ffb700,0 0 15px #ff8c00,0 0 20px #ff8c00;animation: glow 1.5s ease-in-out infinite alternate;}
+@keyframes glow {0%{text-shadow:0 0 5px #ffd700,0 0 10px #ffb700,0 0 15px #ff8c00,0 0 20px #ff8c00;}50%{text-shadow:0 0 10px #ffd700,0 0 20px #ffb700,0 0 30px #ff8c00,0 0 40px #ff8c00;}100%{text-shadow:0 0 5px #ffd700,0 0 10px #ffb700,0 0 15px #ff8c00,0 0 20px #ff8c00;}}
+.GRABE{font-weight:bolder;font-size:22px;color:#7bff00;text-shadow: 0 0 5px #66ff00,0 0 10px #51ff00,0 0 15px #48ff00,0 0 20px #7bff00;animation: glow 1.5s ease-in-out infinite alternate;}
+@keyframes glow {0%{text-shadow:0 0 10px #7bff00,0 0 10px #ffb700,0 0 15px #ff8c00,0 0 20px #ff8c00;}50%{text-shadow:0 0 10px #ffd700,0 0 20px #ffb700,0 0 30px #ff8c00,0 0 40px #ff8c00;}100%{text-shadow:0 0 5px #ffd700,0 0 10px #ffb700,0 0 15px #ff8c00,0 0 20px #ff8c00;}}
+.GRABE{color: #0b76ef;}
+#rs{color: #003cff;font-size: 30px;}
+/* HERO SECTION */
+main.container{max-width:1100px;margin:auto;padding:0 15px;}
+.hero{
+  background:linear-gradient(to right,#e0f7fa,#b2ebf2);
+  padding:50px 20px;
+  margin:25px 0;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  position:relative;
+  overflow:hidden;
+  animation:fadeInUp 1s ease-out;
+}
+.hero h1{font-size:2rem;color:#0b76ef;margin-bottom:10px;opacity:0;transform:translateY(20px);animation:fadeSlideIn 1s ease-out forwards .3s;}
+.hero p{font-size:1rem;color:#333;margin-bottom:20px;opacity:0;transform:translateY(20px);animation:fadeSlideIn 1s ease-out forwards .5s;}
+.hero img{
+  position:absolute; top:10px; right:10px; width:150px;
+  animation:float 4s ease-in-out infinite, fadeSlideIn 1s ease-out forwards .7s;
+}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+@keyframes fadeSlideIn{to{opacity:1;transform:translateY(0);}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* HERO Features inside */
+.features{display:flex;gap:15px;margin-top:20px;flex-wrap:wrap;justify-content:center;}
+.card{
+  background:#fff; padding:25px; border-radius:15px;
+  flex:1; min-width:230px; max-width:300px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  transition:0.3s; opacity:0; transform:translateY(20px); animation:fadeSlideIn 1s ease-out forwards .9s;
+}
+.card:hover{transform:translateY(-8px);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+.card strong{font-size:1.1rem;color:#0b76ef;}
+
+/* Courses */
+.course-section{padding:15px 20px;text-align:center;background:#f9f9f9;border-radius:15px;margin-bottom:10px;}
+.course-section h2{margin-bottom:10px;}
+.course-grid{display:flex;flex-direction:column;gap:15px;align-items:center;}
+.course-card{background:#fff;padding:15px 20px;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:transform 0.3s ease, box-shadow 0.3s ease;width:95%;max-width:250px;text-align:center;cursor:pointer;}
+.course-card h3,.price{transition: transform 0.3s ease, text-shadow 0.3s ease;}
+.course-card:hover{transform:translateY(-8px) scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+.course-card:hover h3,.course-card:hover .price{animation:courseBounce 0.6s;text-shadow:0 0 8px #0b76ef,0 0 12px #2bbbad;}
+@keyframes courseBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.course-card h3{margin-bottom:6px;font-size:1.05rem;}
+.price{font-weight:bold;color:#0b76ef;font-size:1rem;}
+
+/* We Provide */
+.provide-section{padding:15px 20px;text-align:center;background:#fff;border-radius:15px;margin-bottom:10px;}
+.provide-section h2{margin-bottom:10px;}
+.provide-grid{display:flex;flex-direction:column;gap:10px;align-items:flex-start;max-width:600px;margin:auto;}
+.provide-item{display:flex;align-items:center;gap:8px;background:#f0f4f8;padding:8px 10px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+.provide-item img{width:25px;height:25px;}
+
+/* Features Section */
+.features-section{padding:15px 20px;text-align:center;background:#f9f9f9;border-radius:15px;margin-bottom:10px;}
+.features-section h2{margin-bottom:10px;}
+.features-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:15px;max-width:800px;margin:auto;
+}
+.feature-item{
+  background:#fff;padding:20px;border-radius:15px;text-align:center;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:transform 0.3s ease, box-shadow 0.3s ease;cursor:pointer;
+}
+.feature-item img{width:60px;height:60px;margin-bottom:10px;transition:transform 0.3s ease, box-shadow 0.3s ease;}
+.feature-item strong{display:block;margin-bottom:4px;color:#0b76ef;}
+.feature-item:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+.feature-item:hover img{transform:scale(1.2) rotate(5deg);animation:bounce 0.6s;box-shadow:0 0 15px #0b76ef,0 0 30px #2bbbad;}
+@keyframes bounce{0%,100%{transform:translateY(0) scale(1.2) rotate(5deg);}50%{transform:translateY(-8px) scale(1.3) rotate(-5deg);}}
+
+/* Weekly Exams */
+@keyframes weeklyExamEntrance{0%{opacity:0;transform:translateY(20px) scale(0.95);}50%{opacity:1;transform:translateY(-5px) scale(1.05);}100%{opacity:1;transform:translateY(0) scale(1);}}
+.weekly-exam{animation:weeklyExamEntrance 1s ease forwards;}
+
+/* Contact Form */
+#contact{padding:15px 20px;margin-bottom:10px;}
+form{display:grid;gap:10px;margin-top:12px;}
+input,select,textarea,button{padding:10px;border-radius:8px;border:1px solid #ccc;width:100%;font-size:0.95rem;}
+button{background:#0b76ef;color:#fff;border:none;cursor:pointer;font-weight:bold;transition:0.3s;}
+button:hover{background:#095ab5;}
+
+/* Admin Panel */
+#admin-login-left{position:fixed;bottom:15px;left:15px;background:#fff;padding:8px 10px;border-radius:10px;box-shadow:0 3px 8px rgba(0,0,0,0.2);z-index:100;display:flex;gap:5px;align-items:center;}
+#admin-login-left input{margin:0;padding:6px 8px;width:100px;font-size:0.85rem;border-radius:8px;border:1px solid #ccc;}
+#admin-login-left button{padding:6px 10px;font-size:0.85rem;border-radius:8px;}
+#admin-panel{display:none;position:fixed;top:70px;left:50%;transform:translateX(-50%);width:85%;max-width:800px;background:#f9f9f9;padding:20px;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.25);overflow:hidden;max-height:70vh;z-index:999;font-family:'Segoe UI',sans-serif;}
+#admin-panel h2{text-align:center;color:#0b76ef;margin-bottom:10px;font-size:1.4rem;}
+#admin-panel button{float:right;background:#e74c3c;color:#fff;padding:6px 12px;border:none;border-radius:8px;cursor:pointer;font-weight:bold;transition:0.3s;}
+#admin-panel button:hover{background:#c0392b;}
+#adminTable{width:100%;border-collapse:collapse;}
+#adminTable th,#adminTable td{padding:8px 6px;text-align:left;border-bottom:1px solid #ddd;font-size:0.85rem;}
+#adminTable th{position:sticky;top:0;z-index:1;background:linear-gradient(90deg,#0b76ef,#2bbbad);color:#fff;cursor:pointer;}
+#adminTable tbody tr{transition:0.3s;}
+#adminTable tbody tr:hover{background:#e1f5fe;}
+#newSubmissionNotice{display:none;background:#0b76ef;color:#fff;padding:6px;border-radius:6px;text-align:center;margin-bottom:6px;font-weight:bold;font-size:0.85rem;}
+#adminSearch{width:100%;padding:6px;margin-bottom:8px;border-radius:6px;border:1px solid #ccc;font-size:0.85rem;}
+
+/* Footer */
+footer{padding:15px;text-align:center;background:#0b76ef;color:#fff;margin-top:20px;border-top-left-radius:15px;border-top-right-radius:15px;font-weight:bold;}
+
+/* Floating Buttons */
+.whatsapp-float,.call-float{position:fixed;width:50px;height:50px;border-radius:50%;color:#fff;text-align:center;font-size:26px;box-shadow:2px 2px 6px rgba(0,0,0,0.3);z-index:100;line-height:50px;}
+.whatsapp-float{bottom:15px;right:15px;background:#25D366;}
+.call-float{bottom:75px;right:15px;background:#0b76ef;}
+.whatsapp-float i,.call-float i{margin-top:0;}
+
+/* Responsive */
+@media(max-width:768px){nav ul{display:grid;grid-template-columns:1fr 1fr;gap:5px;}nav ul li a{width:100%;text-align:center;}.course-grid,.provide-grid,.features-grid{flex-direction:column;align-items:center;display:flex;}#offer{padding:15px 5px;}}
+@media(max-width:600px){.hero{padding:30px 15px;}.hero h1{font-size:1.6rem;}.hero img{position:static;width:100px;margin:15px auto 0;display:block;animation:float 3s ease-in-out infinite;}.features{flex-direction:column;align-items:center;}.card{width:90%;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand"><div class="logo">Elite</div><div>Tutorials</div></div>
+  <nav><ul>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#provide">We Provides</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul></nav>
+</header>
+
+<section id="offer">
+  <div>
+    <h1>Dussehra Special Offer</h1>
+    <p>Celebrate <b>Durga Puja</b>with Knowledge! <h4 id="offer-glow "class="GRABE">GRABE THE KNOWLEDGE WITH <B id="rs">30RS&nbsp</B>ONLY</h4></p>
+    <p id="offer-glow"><strong>OFFER VALID TILL 8TH OCTOBER</strong></p>
+    <a href="#contact">Enroll Now</a>
+  </div>
+</section>
+
+<main class="container">
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Master IT Skills with Us</h1>
+    <p>Expert faculty • Small batches • Online & Classroom • Personalized support</p>
+    <div class="features">
+      <div class="card"><strong>Classroom & Online</strong><p>Learn live or at your own pace.</p></div>
+      <div class="card"><strong>Projects & Labs</strong><p>Hands-on coding & real projects.</p></div>
+    </div>
+    <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="CPU Networking" title="Networking CPU">
+  </section>
+
+  <!-- Courses -->
+  <section id="courses" class="course-section">
+    <h2>Courses</h2>
+    <div class="course-grid">
+      <div class="course-card"><h3>+2 First Year (2 Years)</h3><p class="price">Base price ₹1000, Offer price ₹500 Monthly</p></div>
+      <div class="course-card"><h3>+2 Second Year (1 Year)</h3><p class="price">Base price ₹800, Offer price ₹400 Monthly</p></div>
+    </div>
+  </section>
+
+  <!-- We Provide -->
+  <section id="provide" class="provide-section">
+    <h2>We provides in this course</h2>
+    <div class="provide-grid">
+      <div class="provide-item"><img src="https://cdn-icons-gif.flaticon.com/18996/18996418.gif">Computer Basics & Fundamentals</div>
+      <div class="provide-item"><img src="https://cdn-icons-png.flaticon.com/512/226/226777.png">Programming with Java</div>
+      <div class="provide-item"><img src="https://cdn-icons-png.flaticon.com/512/1051/1051277.png">Website Building with HTML & CSS</div>
+      <div class="provide-item"><img src="https://cdn-icons-gif.flaticon.com/19007/19007977.gif">Computer Networking & Security</div>
+      <div class="provide-item"><img src="https://cdn-icons-gif.flaticon.com/14447/14447532.gif">Database Management</div>
+      <div class="provide-item"><img src="https://cdn-icons-gif.flaticon.com/17905/17905229.gif">Backend & Frontend in IT Applications</div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="features-section">
+    <h2>Our Features</h2>
+    <div class="features-grid">
+      <div class="feature-item"><img src="https://cdn-icons-gif.flaticon.com/15591/15591404.gif"><strong>Practical Learning</strong>Hands-on coding sessions & live projects for real-world skills.</div>
+      <div class="feature-item"><img src="https://cdn-icons-gif.flaticon.com/18116/18116837.gif"><strong>Expert Trainers</strong>Industry professionals with years of experience.</div>
+      <div class="feature-item"><img src="https://cdn-icons-gif.flaticon.com/12146/12146104.gif"><strong>Flexible Timing</strong>Weekend & weekday batches available.</div>
+      <div class="feature-item weekly-exam"><img src="https://cdn-icons-gif.flaticon.com/16664/16664316.gif"><strong>Exams</strong>We conduct weekly exams to boost students performance.</div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact">
+    <h2>Contact & Enroll</h2>
+    <form id="enrollForm">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+      <select name="course">
+        <option>+2 First Year</option>
+        <option>+2 Second Year</option>
+      </select>
+      <textarea name="message" rows="4" placeholder="Message"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+</main>
+
+<!-- Floating Buttons -->
+<a href="https://wa.me/919692391369" target="_blank" class="whatsapp-float"><i>💬</i></a>
+<a href="tel:+919692391369" class="call-float"><i>📞</i></a>
+
+<!-- Admin Panel -->
+<div id="admin-login-left">
+  <input type="password" id="adminPass" placeholder="Admin Password">
+  <button onclick="checkAdmin()">Login</button>
+</div>
+
+<div id="admin-panel">
+  <button onclick="closeAdminPanel()">Logout</button>
+  <h2>Admin Panel - Submissions</h2>
+  <div id="newSubmissionNotice"></div>
+  <input type="text" id="adminSearch" placeholder="Search by Name, Email, Phone, Course...">
+  <div style="overflow-y:auto; max-height:65vh;">
+    <table id="adminTable">
+      <thead>
+        <tr><th>Name</th><th>Email</th><th>Phone</th><th>Course</th><th>Message</th><th>Submitted At</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<audio id="notificationSound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+
+<footer>
+  <p>© 2025 Elite Tutorials Sambalpur • All rights reserved</p>
+</footer>
+
+<script>
+// Form submission
+let googleWebAppUrl="https://script.google.com/macros/s/AKfycbyWBR_nxUBNNt6NPNgGckZvdRJXc1k5F7sz4ypF0N9QmXZhQpsKTD32BRKR2dvAYfIL-g/exec";
+document.getElementById("enrollForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  let data={}; new FormData(this).forEach((v,k)=>data[k]=v);
+  fetch(googleWebAppUrl,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(data)})
+    .then(()=>alert("Submitted Successfully!")).catch(err=>alert("Error!"));
+  this.reset();
+});
+
+// Admin Panel
+let adminPassword="mossad127@"; let lastDataLength=0; let refreshInterval;
+function checkAdmin(){
+  let pass=document.getElementById('adminPass').value;
+  if(pass===adminPassword){
+    document.getElementById('admin-login-left').style.display="none";
+    document.getElementById('admin-panel').style.display="block";
+    fetchCSVData();
+    refreshInterval=setInterval(fetchCSVData,5000);
+  } else { alert("Wrong Password!"); }
+}
+function closeAdminPanel(){
+  document.getElementById('admin-panel').style.display="none";
+  document.getElementById('admin-login-left').style.display="flex";
+  clearInterval(refreshInterval);
+}
+function fetchCSVData(){
+  fetch(googleWebAppUrl)
+    .then(res=>res.json())
+    .then(data=>{
+      let tbody=document.querySelector("#adminTable tbody");
+      if(data.length>lastDataLength){showNewSubmissionNotice(data.length-lastDataLength);}
+      lastDataLength=data.length;
+      tbody.innerHTML="";
+      data.sort((a,b)=>new Date(b['Submitted At'])-new Date(a['Submitted At']));
+      data.forEach(row=>{
+        let tr=document.createElement("tr");
+        tr.innerHTML=`<td>${row['Name']}</td><td>${row['Email']}</td><td>${row['Phone']}</td><td>${row['Course']}</td><td>${row['Message']}</td><td>${row['Submitted At']}</td>`;
+        tbody.appendChild(tr);
+      });
+    });
+}
+function showNewSubmissionNotice(count){
+  let notice=document.getElementById('newSubmissionNotice');
+  notice.innerText=`${count} New Submission(s)!`;
+  notice.style.display="block";
+  document.getElementById("notificationSound").play();
+  setTimeout(()=>{notice.style.display="none";},5000);
+}
+document.getElementById('adminSearch').addEventListener("input",function(){
+  let filter=this.value.toLowerCase();
+  document.querySelectorAll("#adminTable tbody tr").forEach(tr=>{
+    tr.style.display=Array.from(tr.cells).some(td=>td.innerText.toLowerCase().includes(filter))?"":"none";
+  });
+});
+</script>
+
+</body>
+</html>
